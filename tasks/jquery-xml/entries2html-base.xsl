@@ -57,7 +57,7 @@
 				<xsl:call-template name="entry-body"/>
 
 				<xsl:if test="normalize-space(longdesc/*)">
-					<div class="longdesc">
+					<div class="longdesc" id="entry-longdesc">
 						<xsl:apply-templates select="longdesc"/>
 					</div>
 				</xsl:if>
@@ -437,6 +437,12 @@
 				<xsl:variable name="name" select="@name"/>
 				<div><a href="#event-{$name}"><xsl:value-of select="$name"/></a></div>
 			</xsl:for-each>
+		</div>
+
+		<div class="quick-nav-section">
+			<h3>More</h3>
+			<div><a href="#entry-longdesc">Overview</a></div>
+			<div><a href="#entry-examples">Examples</a></div>
 		</div>
 	</section>
 </xsl:template>
